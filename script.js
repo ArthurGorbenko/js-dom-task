@@ -65,10 +65,10 @@ function replace(buttonElement, dogCard) {
   let countForParameters = 0;
   for (prop in dogCard) {
     if (prop === "Source") {
+      image.src = dogCard.Source;
       break;
     }
     parameters[countForParameters].textContent = prop + " : " + dogCard[prop];
     countForParameters++;
   }
-  image.src = dogCard.Source;
 };
