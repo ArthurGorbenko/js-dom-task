@@ -47,17 +47,19 @@ const puppies = [
 
 const image = document.querySelector(".info_image");
 const parameters = document.querySelectorAll(".parameters");
-
 const menu = document.querySelector(".menu");
-menu.addEventListener("click", function(event) {
-  let target = event.target;
-  while (target != menu) {
-    puppies.forEach(el =>
-      target.classList.contains(el.Breed) ? replace(target, el) : null
-    );
-    target = target.parentNode;
-  }
-});
+
+menu.addEventListener("click",doOnClick);
+
+function doOnClick(event){
+      let target = event.target;
+      while (target != menu) {
+        puppies.forEach(el =>
+          target.classList.contains(el.Breed) ? replace(target, el) : null
+        );
+        target = target.parentNode;
+      }
+  };
 
 function replace(buttonElement, dogCard) {
   let countForParameters = 0;
@@ -69,4 +71,4 @@ function replace(buttonElement, dogCard) {
     countForParameters++;
   }
   image.src = dogCard.Source;
-}
+};
